@@ -317,12 +317,21 @@ fun MetricCard(title: String, value: String, subtitle: String, modifier: Modifie
 
 @Composable
 fun SectionCard(title: String, content: @Composable ColumnScope.() -> Unit) {
-    Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = Color.White)) {
-Column(
-    modifier = Modifier.fillMaxWidth().padding(16.dp),
-    verticalArrangement = Arrangement.spacedBy(10.dp),
-    content = content
-) {            Text(title, fontSize = 17.sp, fontWeight = FontWeight.Bold, color = Ink)
+    Card(
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Text(
+                title,
+                fontSize = 17.sp,
+                fontWeight = FontWeight.Bold,
+                color = Ink
+            )
+            content()
         }
     }
 }
