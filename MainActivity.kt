@@ -40,6 +40,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Pattern 
 import kotlin.math.roundToInt
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 
 private val Navy = Color(0xFF10152B)
 private val Panel = Color(0xFF1B2341)
@@ -275,7 +278,13 @@ private fun saveMeals(p:android.content.SharedPreferences,list:List<MealEntry>){
         Card(colors = CardDefaults.cardColors(containerColor = Panel), shape = RoundedCornerShape(28.dp), modifier = Modifier.fillMaxWidth()) {
             Column(Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Box(Modifier.size(126.dp).clip(CircleShape).background(Brush.linearGradient(listOf(Color(0xFF293D73), Color(0xFF654A9D)))), contentAlignment = Alignment.Center) {
-                    Text("🤖", fontSize = 76.sp, modifier = Modifier.graphicsLayer { translationY = bob.dp.toPx() })
+                    Image(
+    painter = painterResource(id = R.drawable.neo_mascot),
+    contentDescription = "Néo",
+    modifier = Modifier
+        .size(180.dp)
+        .graphicsLayer { translationY = bob.dp.toPx() }
+)
                     Surface(Modifier.align(Alignment.BottomEnd), color = Mint, shape = CircleShape) { Text("•", color = Navy, fontSize = 22.sp, modifier = Modifier.padding(horizontal = 8.dp, vertical = 0.dp)) }
                 }
                 Text("Salut, c'est Néo !", color = WhiteSoft, fontSize = 25.sp, fontWeight = FontWeight.ExtraBold)
