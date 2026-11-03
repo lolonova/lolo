@@ -31,6 +31,11 @@ jobs:
       - name: Remplacer MainActivity
         run: |
           cp MainActivity.kt source/MonCoach90_V5/app/src/main/java/fr/moncoach90/app/MainActivity.kt
+
+      - name: Installer l'image de Neo
+        run: |
+          mkdir -p source/MonCoach90_V5/app/src/main/res/drawable-nodpi
+          cp neo_mascot.png source/MonCoach90_V5/app/src/main/res/drawable-nodpi/neo_mascot.png
   
       - name: Construire l'application
         run: |
