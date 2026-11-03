@@ -130,7 +130,7 @@ private fun saveMeals(p:android.content.SharedPreferences,list:List<MealEntry>){
     }
 }
 // A small helper keeps screens scrollable without requiring a separate layout file.
-@Composable private fun Modifier.verticalScrollCompat(): Modifier = androidx.compose.foundation.verticalScroll(rememberScrollState())
+@Composable private fun Modifier.verticalScrollCompat(): Modifier = this.verticalScroll(rememberScrollState())
 
 @Composable private fun HomeScreen(weight:Float,start:Float,count:Int,water:Int,onWater:()->Unit,onWeight:()->Unit,onBoost:()->Unit,padding:PaddingValues){
     ScreenColumn("Salut, champion 👋","Un pas après l'autre. Aujourd'hui compte.",padding){
