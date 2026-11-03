@@ -152,7 +152,7 @@ private fun Coach90App(context: Context) {
     }
 
     val speechLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == ComponentActivity.RESULT_OK) {
+        if (result.resultCode == ComponentActivity.Activity.RESULT_OK) {
             val spoken = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.firstOrNull()
             if (!spoken.isNullOrBlank()) handleCommand(spoken) else voiceError = "Je n'ai pas bien entendu. Tu peux réessayer."
         } else {
